@@ -4838,7 +4838,7 @@ TSHARVCABAL:
 	DeliversCash:
 		Payload: 500
 	RenderVoxels:
-		Image: tsharv
+		Image: charv2
 	RenderSprites:
 		Image: tsharv
 

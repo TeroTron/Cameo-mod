@@ -65,7 +65,7 @@ tkmmcv:
 		Name: Mobile Construction Vehicle
 	Buildable:
 		BuildPaletteOrder: 100
-		Prerequisites: ~tsgtweap, tsgtdeptgdi
+		Prerequisites: ~scmarine
 		Queue: Vehicle, RAVehicle
 		BuildDurationModifier: 40
 		Description: Deploys into another Construction Yard.\n  Unarmed
@@ -218,7 +218,7 @@ tkmharv:
 		PipCount: 8
 		Capacity: 35
 	Buildable:
-		Prerequisites: ~tsgtweap, tsproc
+		Prerequisites: ~tkmmcv, ~scmarine
 		Queue: Vehicle, RAVehicle
 		Description: Harvests Tiberium for processing
 	WithVoxelBody:

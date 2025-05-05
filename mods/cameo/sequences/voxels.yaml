@@ -312,6 +312,9 @@ ts3tnk: # TODO: unused
 tsftnk: # TODO: unused
 	idle:
 
+charv2:
+	idle:
+
 tkmmcv:
 	idle:
 
