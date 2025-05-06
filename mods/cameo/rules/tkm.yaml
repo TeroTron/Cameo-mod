@@ -330,33 +330,6 @@ tkmtechcenter:
 		PlayerPalette: playerra2
 
 #######################################
-# TKM Vehicles
-#######################################
-
-tkmharv:
-	Inherits: ^TDHARV
-	Inherits@Voxel: ^TKMRenderVoxel
-	Health:
-		HP: 150000
-	Harvester:
-		PipCount: 8
-		Capacity: 35
-	Buildable:
-		Prerequisites: ~tkmfactory, ~tkmrefinery
-		Queue: Vehicle, RAVehicle
-		Description: Harvests Tiberium for processing
-	WithVoxelBody:
-	WithDockingAnimation:
-	Voiced:
-		VoiceSet: TSVehicle
-	DeliversCash:
-		Payload: 500
-	RenderSprites:
-		Image: tsharv
-	RenderVoxels:
-		Image: stk
-
-#######################################
 # TKM Infantry Reporting!
 #######################################
 
@@ -467,3 +440,283 @@ tkmrocketeer:
 	WithDeathAnimation:
 		DeathSequencePalette: ra2player
 		CrushedSequencePalette: ra2effect
+
+tkmjug:
+	Inherits: ^Soldier
+	Inherits@Template: ^ScoutInfantryTemplate
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@DECORATIONS: ^InfantryExperienceHospitalHazmatOverrides
+	Inherits@anim: ^TSInfantry
+	Inherits@vo: ^AttackFrontalVoice
+	Inherits@AntiInf: ^PrioritizeInfantry
+	Valued:
+		Cost: 120
+	Tooltip:
+		Name: Jug
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 10
+		Prerequisites: ~tkmbarracks
+		Queue: Infantry, RAInfantry
+		IconPalette: ra2
+		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles
+	Mobile:
+		Speed: 60
+	Health:
+		HP: 16000
+	ChangesHealth@SelfHealing:
+		Step: 16
+	AutoTarget:
+		ScanRadius: 4
+	Armament:
+		Name: primary
+		Weapon: RA2GattlingMG1
+		PauseOnCondition: gatling
+		LocalOffset: 500,140,400, 500,-150,400
+		MuzzleSequence: muzzle
+		MuzzlePalette: ra2effect
+	Armament@AA:
+		Name: secondary
+		Weapon: RA2GattlingMG1AA
+		PauseOnCondition: gatling
+		LocalOffset: 500,140,400, 500,-150,400
+		MuzzleSequence: muzzle
+		MuzzlePalette: ra2effect
+	Armament@GARRISONED: ##########
+		Name: garrisoned
+		Weapon: RA2GattlingMG1
+	ReloadDelayMultiplier@GattlingSpeed1:
+		RequiresCondition: gatling >= 1
+		Modifier: 90
+	ReloadDelayMultiplier@GattlingSpeed2:
+		RequiresCondition: gatling >= 2
+		Modifier: 90
+	ReloadDelayMultiplier@GattlingSpeed3:
+		RequiresCondition: gatling >= 3
+		Modifier: 90
+	ReloadDelayMultiplier@GattlingSpeed4:
+		RequiresCondition: gatling >= 4
+		Modifier: 90
+	ReloadDelayMultiplier@GattlingSpeed5:
+		RequiresCondition: gatling >= 5
+		Modifier: 90
+	ReloadDelayMultiplier@GattlingSpeed6:
+		RequiresCondition: gatling >= 6
+		Modifier: 90
+	ReloadDelayMultiplier@GattlingSpeed7:
+		RequiresCondition: gatling >= 7
+		Modifier: 90
+	ReloadDelayMultiplier@GattlingSpeed8:
+		RequiresCondition: gatling >= 8
+		Modifier: 90
+	ReloadDelayMultiplier@GattlingSpeed9:
+		RequiresCondition: gatling >= 9
+		Modifier: 90
+	ReloadDelayMultiplier@GattlingSpeed10:
+		RequiresCondition: gatling >= 10
+		Modifier: 90
+	# Selectable:
+	# 	Bounds: 256, 512
+	# 	DecorationBounds: 256, 512
+	# Inherits@EXT: ^ExternalConditions ##########
+	# AcceptsDeliveredExperience: ##########
+	# 	ValidTypes: infantry ##########
+	Voiced:
+		VoiceSet: TSInfantry
+	RenderSprites:
+		PlayerPalette: playerra2
+	WithDeathAnimation:
+		DeathSequencePalette: ra2player
+		CrushedSequencePalette: ra2effect
+
+#######################################
+# TKM Vehicles
+#######################################
+
+tkmharv:
+	Inherits: ^TDHARV
+	Inherits@Voxel: ^TKMRenderVoxel
+	Health:
+		HP: 150000
+	Harvester:
+		PipCount: 8
+		Capacity: 35
+	Buildable:
+		Prerequisites: ~tkmfactory, tkmrefinery
+		Queue: Vehicle, RAVehicle
+		Description: Harvests Tiberium for processing
+	WithVoxelBody:
+	WithDockingAnimation:
+	Voiced:
+		VoiceSet: TSVehicle
+	DeliversCash:
+		Payload: 500
+	RenderSprites:
+		Image: tsharv
+	RenderVoxels:
+		Image: stk
+
+tkmbuggy:
+	Inherits: ^Vehicle
+	Inherits@Voxel: ^TKMRenderVoxel
+	Inherits@Template: ^ScoutVehicleTemplate
+	Inherits@EXP: ^GainsExperienceTD
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EMP: ^TurretEMP
+	Inherits@AntiInf: ^PrioritizeInfantry
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: TKM Buggy
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~tkmfactory
+		Queue: Vehicle, RAVehicle
+		Description: actor-jeep.description
+	Mobile:
+		Speed: 150
+		TurnSpeed: 30
+	Health:
+		HP: 27500
+	Repairable:
+		HpPerStep: 1375
+	ChangesHealth@SelfHealing:
+		Step: 11
+	Turreted:
+		TurnSpeed: 30
+		Offset: -85,0,192
+	Armament:
+		Weapon: MachineGunH
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+		RequiresCondition: !up_armorpiercingbullets
+	Armament@Upgrade:
+		Weapon: MachineGunAPH
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+		RequiresCondition: up_armorpiercingbullets
+	WithMuzzleOverlay:
+	FireWarheadsOnDeath:
+		Weapon: UnitExplodeSmall
+	ActorStatValues:
+		Upgrades: up_longrangesensors, up_armorpiercingbullets, up_cuttingedgeequipment, up_lightweightarmorplating
+	RenderSprites:
+		Image: tkmbuggy
+	RenderVoxels:
+		Image: tkmbuggy
+		Scale: 1
+
+tkmtechnicaltruck:
+	Inherits: ^Vehicle
+	Inherits@Voxel: ^TKMRenderVoxel
+	Inherits@Template: ^ScoutVehicleTemplate
+	Inherits@EXP: ^GainsExperienceTD
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EMP: ^TurretEMP
+	Inherits@AntiInf: ^PrioritizeInfantry
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: TKM Technical Truck
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~tkmfactory
+		Queue: Vehicle, RAVehicle
+		Description: actor-jeep.description
+	Mobile:
+		Speed: 150
+		TurnSpeed: 30
+	Health:
+		HP: 27500
+	Repairable:
+		HpPerStep: 1375
+	ChangesHealth@SelfHealing:
+		Step: 11
+	Turreted:
+		TurnSpeed: 30
+		Offset: -85,0,192
+	Armament:
+		Weapon: RA2GattlingMG1
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+		RequiresCondition: !up_armorpiercingbullets
+	Armament@Upgrade:
+		Weapon: RA2GattlingMG1
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+		RequiresCondition: up_armorpiercingbullets
+	WithMuzzleOverlay:
+	AttackTurreted:
+	WithVoxelBody:
+	WithVoxelTurret:
+	WithVoxelBarrel:
+	FireWarheadsOnDeath:
+		Weapon: UnitExplodeSmall
+	ActorStatValues:
+		Upgrades: up_longrangesensors, up_armorpiercingbullets, up_cuttingedgeequipment, up_lightweightarmorplating
+	RenderSprites:
+		Image: tkmtechnicaltruck
+	RenderVoxels:
+		Image: quad2
+		Scale: 12
+
+tkmzaza:
+	Inherits: ^Vehicle
+	Inherits@Voxel: ^TKMRenderVoxel
+	Inherits@Template: ^ScoutVehicleTemplate
+	Inherits@EXP: ^GainsExperienceTD
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EMP: ^TurretEMP
+	Inherits@AntiInf: ^PrioritizeInfantry
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: TKM Zaza
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~tkmfactory
+		Queue: Vehicle, RAVehicle
+		Description: actor-jeep.description
+	Mobile:
+		Speed: 80
+		TurnSpeed: 30
+	Health:
+		HP: 27500
+	Repairable:
+		HpPerStep: 1375
+	ChangesHealth@SelfHealing:
+		Step: 11
+	Turreted:
+		TurnSpeed: 30
+		Offset: -85,0,192
+	Armament:
+		Weapon: RA2GattlingMG1
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+		RequiresCondition: !up_armorpiercingbullets
+	Armament@Upgrade:
+		Weapon: RA2GattlingMG1
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+		RequiresCondition: up_armorpiercingbullets
+	WithMuzzleOverlay:
+	AttackTurreted:
+	WithVoxelBody:
+	WithVoxelTurret:
+	FireWarheadsOnDeath:
+		Weapon: UnitExplodeSmall
+	ActorStatValues:
+		Upgrades: up_longrangesensors, up_armorpiercingbullets, up_cuttingedgeequipment, up_lightweightarmorplating
+	RenderSprites:
+		Image: tkmtechnicaltruck
+	RenderVoxels:
+		Image: shilka
+		Scale: 1

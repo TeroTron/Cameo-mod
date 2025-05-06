@@ -1,20 +1,6 @@
-
-tkmmcv:
-	Defaults:
-		Filename: umcv.shp
-	idle:
-		Filename: umcv.shp
-		Facings: 32
-		ShadowStart: 32
-		Tick: 150
-	icon:
-		Filename: tssmcvicon.shp
-
-tkmharv:
-	idle:
-		Filename: invisibleitem.shp
-	icon:
-		Filename: tssmcvicon.shp
+#######################################
+# TKM Buildings
+#######################################
 
 tkmcommandcenter:
 	Defaults:
@@ -178,6 +164,10 @@ tkmtechcenter:
 		Filename: ra2abrk.shp
 		Offset: 0,0
     
+#######################################
+# TKM Infantry Reporting!
+#######################################
+
 tkmrifleman:
 	Defaults:
 		Filename: poncho.shp
@@ -288,4 +278,103 @@ tkmrocketeer:
 		Scale: 1.5
 	icon:
 		Filename: tkmrocketeericon.png
+		AddExtension: False
+
+tkmjug:
+	Defaults:
+		Filename: tkmjug.shp
+	stand:
+		Facings: 8
+		ShadowStart: 255
+	idle:
+		Facings: 8
+		ShadowStart: 255
+	idle1:
+		Start: 88
+		Length: 15
+		Facings: 1
+		Tick: 80
+		ShadowStart: 343
+	idle2:
+		Start: 238
+		Length: 14
+		Facings: 1
+		Tick: 80
+		ShadowStart: 493
+	run:
+		Start: 8
+		Length: 10
+		Facings: 8
+		Tick: 80
+		ShadowStart: 263
+	shoot:
+		Start: 103
+		Length: 16
+		Facings: 8
+		Tick: 80
+		ShadowStart: 358
+	die:
+		Start: 223
+		Length: 15
+		ShadowStart: 478
+	die2:
+		Start: 223
+		Length: 15
+		ShadowStart: 478
+	die3:
+		Start: 223
+		Length: 15
+		ShadowStart: 478
+	die4:
+		Filename: frag3.shp
+		Length: *
+	die-crushed:
+		Filename: blue_frag3.shp
+		Length: *
+		Scale: 1.5
+	icon:
+		Filename: tkmriflemanicon.png
+		AddExtension: False
+
+#######################################
+# TKM Vehicles
+#######################################
+
+tkmmcv:
+	Defaults:
+		Filename: umcv.shp
+	idle:
+		Filename: umcv.shp
+		Facings: 32
+		ShadowStart: 32
+		Tick: 150
+	icon:
+		Filename: tssmcvicon.shp
+
+tkmharv:
+	idle:
+		Filename: invisibleitem.shp
+	icon:
+		Filename: tssmcvicon.shp
+
+tkmbuggy:
+	idle:
+		Filename: invisibleitem.shp
+	muzzle:
+		Filename: minigun.shp
+		Length: 6
+		Facings: 8
+	icon:
+		Filename: jeepicnh.shp
+		AddExtension: False
+
+tkmtechnicaltruck:
+	idle:
+		Filename: invisibleitem.shp
+	muzzle:
+		Filename: minigun.shp
+		Length: 6
+		Facings: 8
+	icon:
+		Filename: jeepicnh.shp
 		AddExtension: False
