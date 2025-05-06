@@ -1,7 +1,12 @@
 
 tkmmcv:
+	Defaults:
+		Filename: umcv.shp
 	idle:
-		Filename: invisibleitem.shp
+		Filename: umcv.shp
+		Facings: 32
+		ShadowStart: 32
+		Tick: 150
 	icon:
 		Filename: tssmcvicon.shp
 
@@ -13,20 +18,26 @@ tkmharv:
 
 tkmcommandcenter:
 	Defaults:
-		Offset: 2,-26
+		Filename: sgcnst.shp
 	idle:
-		Filename: ugcnst.shp
+		Filename: sgcnst.shp
 		Length: 1
 		ShadowStart: 3
 		Tick: 150
 	damaged-idle:
-		Filename: ugcnst.shp
+		Filename: sgcnst.shp
 		Start: 1
 		ShadowStart: 4
 		Length: 1
 		Tick: 150
+	idle-front:
+		Filename: sgcnst_a.shp
+		Length: 20
+	damaged-idle-front:
+		Filename: sgcnst_a.shp
+		Length: 20
 	make:
-		Filename: ugcnstmk.shp
+		Filename: sgcnstmk.shp
 		Length: 18
 		ShadowStart: 18
 	icon:
@@ -35,7 +46,7 @@ tkmcommandcenter:
 
 tkmbarracks:
 	Defaults:
-		Offset: -15,10
+		Filename: ugbarr.shp
 	build:
 		Filename: invisibleitem.shp
 	idle:
@@ -55,7 +66,7 @@ tkmbarracks:
 
 tkmpowerplant:
 	Defaults:
-		Offset: -15,10
+		Filename: ugpowr.shp
 	build:
 		Filename: invisibleitem.shp
 	idle:
@@ -75,7 +86,7 @@ tkmpowerplant:
     
 tkmrefinery:
 	Defaults:
-		Offset: 1,-12
+		Filename: ugsupy.shp
 	idle:
 		Filename: ugsupy.shp
 		ShadowStart: 3
@@ -94,6 +105,79 @@ tkmrefinery:
 		AddExtension: False
 		Offset: 0,0
 
+tkmfactory:
+	Defaults:
+		Filename: ugarms.shp
+	idle:
+		Filename: ugarms.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ugarms.shp
+		Start: 1
+		ShadowStart: 4
+	dead:
+		Filename: ugarms.shp
+		Start: 1
+		ShadowStart: 4
+		Tick: 400
+	build-door:
+		Filename: ugarms_1.shp
+		Length: 1
+		ShadowStart: 2
+	damaged-build-door:
+		Filename: ugarms_1.shp
+		Start: 1
+		Length: 1
+		ShadowStart: 3
+	make:
+		Filename: ugarmsmk.shp
+		Length: 16
+		ShadowStart: 16
+	icon:
+		Filename: tsweapicon.png
+		Offset: 0, 0
+		UseTilesetCode: false
+
+tkmradar:
+	Defaults:
+		Filename: ugrvan.shp
+	build:
+		Filename: ugrvan.shp
+	idle:
+		Filename: ugrvan.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ugrvan.shp
+		Start: 1
+		ShadowStart: 4
+	make:
+		Filename: ugrvanmk.shp
+		Length: 15
+		ShadowStart: 15
+	icon:
+		Filename: ra2abrk.shp
+		Offset: 0,0
+    
+tkmtechcenter:
+	Defaults:
+		Filename: ugpala.shp
+	build:
+		Filename: invisibleitem.shp
+	idle:
+		Filename: ugpala.shp
+		ShadowStart: 3
+	damaged-idle:
+		Filename: ugpala.shp
+		Start: 1
+		ShadowStart: 4
+	make:
+		Filename: ugpalamk.shp
+		Length: 13
+		ShadowStart: 13
+	icon:
+		Filename: ra2abrk.shp
+		Offset: 0,0
+    
 tkmrifleman:
 	Defaults:
 		Filename: poncho.shp

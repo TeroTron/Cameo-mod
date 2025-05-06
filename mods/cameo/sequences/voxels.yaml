@@ -315,6 +315,9 @@ tsftnk: # TODO: unused
 charv2:
 	idle:
 
+gharv:
+	idle:
+	
 tkmmcv:
 	idle:
 
