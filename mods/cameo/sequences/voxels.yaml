@@ -312,12 +312,30 @@ ts3tnk: # TODO: unused
 tsftnk: # TODO: unused
 	idle:
 
+charv2:
+	idle:
+
+gharv:
+	idle:
+	
+tkmbuggy:
+	idle:
+	
 tkmmcv:
 	idle:
 
 stk:
 	idle:
 
+quad2:
+	idle:
+	turret: quad2tur
+	barrel: quad2barl
+
+shilka:
+	idle:
+	turret: shilkatur
+	
 #tire: # TODO: unused debris
 #	idle:
 
