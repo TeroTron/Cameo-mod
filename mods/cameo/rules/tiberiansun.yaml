@@ -4817,7 +4817,7 @@ TSHARVMUTANT:
 	DeliversCash:
 		Payload: 500
 	RenderVoxels:
-		Image: tsharv
+		Image: gharv
 	RenderSprites:
 		Image: tsharv
 
@@ -4840,7 +4840,7 @@ TSHARVCABAL:
 	DeliversCash:
 		Payload: 500
 	RenderVoxels:
-		Image: tsharv
+		Image: charv2
 	RenderSprites:
 		Image: tsharv
 
