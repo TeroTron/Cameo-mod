@@ -6485,7 +6485,7 @@ RAFIX.Japan:
 		DeathSequencePalette: raplayer
 	RenderSprites:
 		Image: rafixj
-		PlayerPalette: raplayer
+		PlayerPalette: player_rgba
 
 RA1SYRD:
 	Inherits: ^BaseBuilding

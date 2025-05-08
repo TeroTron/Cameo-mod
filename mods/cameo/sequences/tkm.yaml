@@ -333,7 +333,58 @@ tkmjug:
 		Length: *
 		Scale: 1.5
 	icon:
-		Filename: tkmriflemanicon.png
+		Filename: tkmjuggernauticon.png
+		AddExtension: False
+
+tkmengineer:
+	Defaults:
+		Filename: hijacker.shp
+	stand:
+		Facings: 8
+		Length: 1
+		ShadowStart: 189
+	idle:
+		Facings: 8
+		Length: 1
+		ShadowStart: 189
+	run:
+		Start: 8
+		Length: 10
+		Facings: 8
+		Tick: 80
+		ShadowStart: 197
+	die:
+		Start: 88
+		Facings: 1
+		Length: 20
+		ShadowStart: 277
+	die2:
+		Start: 88
+		Facings: 1
+		Length: 20
+		ShadowStart: 277
+	die3:
+		Start: 88
+		Facings: 1
+		Length: 20
+		ShadowStart: 277
+	die4:
+		Filename: frag3.shp
+		Length: *
+	die-crushed:
+		Filename: blue_frag3.shp
+		Length: *
+		Scale: 1.5
+	idle1:
+		Facings: 8
+		Length: 1
+		ShadowStart: 189
+	idle2:
+		Facings: 8
+		Length: 1
+		ShadowStart: 189
+	icon:
+		Filename: tkmengineericon.png
 		AddExtension: False
 
 #######################################
@@ -369,12 +420,17 @@ tkmbuggy:
 		AddExtension: False
 
 tkmtechnicaltruck:
+	Defaults:
+		Filename: quadcannon.png
 	idle:
-		Filename: invisibleitem.shp
+		Facings: -32
+	turret:
+		Filename: quadcannonturret.png
+		Facings: -32
 	muzzle:
 		Filename: minigun.shp
 		Length: 6
 		Facings: 8
 	icon:
-		Filename: jeepicnh.shp
+		Filename: bggyicnh.shp
 		AddExtension: False

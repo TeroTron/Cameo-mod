@@ -318,24 +318,9 @@ charv2:
 gharv:
 	idle:
 	
-tkmbuggy:
-	idle:
-	
-tkmmcv:
-	idle:
-
 stk:
 	idle:
 
-quad2:
-	idle:
-	turret: quad2tur
-	barrel: quad2barl
-
-shilka:
-	idle:
-	turret: shilkatur
-	
 #tire: # TODO: unused debris
 #	idle:
 
@@ -362,3 +347,26 @@ tsprobe:
 
 tsm_emp:
 	idle:
+
+#
+# TKM
+#
+  
+tkmbuggy:
+	idle:
+	
+tkmmcv:
+	idle:
+
+techni:
+	idle:
+	turret: technitur
+
+shilka:
+	idle:
+	turret: shilkatur
+	
+m1a2:
+	idle:
+	turret: M1A2tur
+	

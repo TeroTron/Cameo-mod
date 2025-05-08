@@ -5,7 +5,7 @@
 
 World:
 	FactionCA@tkm:
-		Name: TKM
+		Name: (Unfinished) TKM
 		InternalName: tkm
 		Game: Red Alert 2
 		Side: RA2 Mod
@@ -441,6 +441,23 @@ tkmrocketeer:
 		DeathSequencePalette: ra2player
 		CrushedSequencePalette: ra2effect
 
+tkmengineer:
+	Inherits: E6
+	Buildable:
+		Prerequisites: ~tkmbarracks
+		Queue: Infantry, RAInfantry
+	Voiced:
+		VoiceSet: TSEngineer
+	DeliversCash:
+		Payload: 250
+	RenderSprites:
+		PlayerPalette: playerra2
+	WithDeathAnimation:
+		DeathSequencePalette: ra2player
+		CrushedSequencePalette: ra2effect
+	RenderSprites:
+		PlayerPalette: playerra2
+
 tkmjug:
 	Inherits: ^Soldier
 	Inherits@Template: ^ScoutInfantryTemplate
@@ -610,7 +627,7 @@ tkmbuggy:
 		Image: tkmbuggy
 		Scale: 1
 
-tkmtechnicaltruck:
+tkmtechnical:
 	Inherits: ^Vehicle
 	Inherits@Voxel: ^TKMRenderVoxel
 	Inherits@Template: ^ScoutVehicleTemplate
@@ -618,10 +635,11 @@ tkmtechnicaltruck:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EMP: ^TurretEMP
 	Inherits@AntiInf: ^PrioritizeInfantry
+	Inherits@SHADOWS: ^Shadows
 	Valued:
 		Cost: 400
 	Tooltip:
-		Name: TKM Technical Truck
+		Name: TKM Technical
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Buildable:
@@ -640,7 +658,7 @@ tkmtechnicaltruck:
 		Step: 11
 	Turreted:
 		TurnSpeed: 30
-		Offset: -85,0,192
+		Offset: -15, 0, 24
 	Armament:
 		Weapon: RA2GattlingMG1
 		LocalOffset: 171,0,85
@@ -655,16 +673,68 @@ tkmtechnicaltruck:
 	AttackTurreted:
 	WithVoxelBody:
 	WithVoxelTurret:
-	WithVoxelBarrel:
 	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 	ActorStatValues:
 		Upgrades: up_longrangesensors, up_armorpiercingbullets, up_cuttingedgeequipment, up_lightweightarmorplating
 	RenderSprites:
-		Image: tkmtechnicaltruck
+		Image: tkmmcv
 	RenderVoxels:
-		Image: quad2
+		Image: techni
 		Scale: 12
+
+tkmquadtruck:
+	Inherits: ^Vehicle
+	Inherits@Template: ^ScoutVehicleTemplate
+	Inherits@EXP: ^GainsExperienceTD
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EMP: ^TurretEMP
+	Inherits@AntiInf: ^PrioritizeInfantry
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: TKM Quad Truck
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Buildable:
+		BuildPaletteOrder: 20
+		Prerequisites: ~tkmfactory
+		Queue: Vehicle, RAVehicle
+		Description: actor-jeep.description
+	Mobile:
+		Speed: 150
+		TurnSpeed: 30
+	Health:
+		HP: 27500
+	Repairable:
+		HpPerStep: 1375
+	ChangesHealth@SelfHealing:
+		Step: 11
+	Turreted:
+		TurnSpeed: 30
+		Offset: -350,0,125
+	Armament:
+		Weapon: RA2GattlingMG1
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+		RequiresCondition: !up_armorpiercingbullets
+	Armament@Upgrade:
+		Weapon: RA2GattlingMG1
+		LocalOffset: 171,0,85
+		MuzzleSequence: muzzle
+		RequiresCondition: up_armorpiercingbullets
+	WithMuzzleOverlay:
+	AttackTurreted:
+	FireWarheadsOnDeath:
+		Weapon: UnitExplodeSmall
+	ActorStatValues:
+		Upgrades: up_longrangesensors, up_armorpiercingbullets, up_cuttingedgeequipment, up_lightweightarmorplating
+	WithSpriteTurret:
+		Scale: 0.15
+	RenderSprites:
+		Scale: 0.1
+		Image: tkmtechnicaltruck
+		PlayerPalette: player_rgba
 
 tkmzaza:
 	Inherits: ^Vehicle
@@ -719,4 +789,61 @@ tkmzaza:
 		Image: tkmtechnicaltruck
 	RenderVoxels:
 		Image: shilka
+		Scale: 1
+
+tkmabrams:
+	Inherits: ^Tank
+	Inherits@Template: ^MainBattleTankTemplate
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@Voxel: ^TKMRenderVoxel
+	Inherits@EMP: ^TurretEMP
+	Inherits@vo: ^AttackTurretedVoice
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Abrams
+	Buildable:
+		BuildPaletteOrder: 190
+		Prerequisites: ~tkmfactory
+		Queue: Vehicle, RAVehicle
+		Description: TKM nato heavy armor.\n Strong vs Vehicles\n Weak vs Aircraft, Infantry
+		BuildDuration: 550
+		BuildDurationModifier: 100
+	Mobile:
+		Locomotor: tracked
+		Speed: 71
+	Health:
+		HP: 150000
+	Repairable:
+		HpPerStep: 2637
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 20 #3
+	Armament:
+		Weapon: 120mmDual
+		Recoil: 128
+		RecoilRecovery: 38
+		LocalOffset: 768,85,90, 768,-85,90
+		MuzzleSequence: muzzle
+	WithMuzzleOverlay:
+	AttackTurreted:
+	SelectionDecorations:
+	Selectable:
+	Inherits@EXT: ^ExternalConditions ##########
+	AcceptsDeliveredExperience: ##########
+		ValidTypes: vehicle ##########
+	WithVoxelBody:
+	WithVoxelTurret:
+	Voiced:
+		VoiceSet: TSVehicle
+	DeliversCash:
+		Payload: 400
+	RenderSprites:
+		Image: tkmtechnicaltruck
+	RenderVoxels:
+		Image: m1a2
 		Scale: 1

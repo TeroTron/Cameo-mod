@@ -8250,3 +8250,21 @@ ra2_chronosk:
 		Length: 13
 		Offset: 0,24
 		ZOffset: 1023
+
+ra2mammothteslatank:
+	Defaults:
+		Filename: MammothTeslaTank.png
+	idle:
+		Facings: -32
+	turret:
+		Filename: MammothTeslaTankturret.png
+		Facings: -32
+	icon:
+		Filename: ra2apocicon.shp
+		AddExtension: False
+	muzzle:
+		Filename: ra2_apmuzzle.shp
+		Length: *
+	muzzle-2:
+		Filename: ra2_vtmuzzle.shp
+		Length: *
